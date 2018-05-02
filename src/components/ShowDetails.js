@@ -13,10 +13,8 @@ class ShowDetails extends Component{
       console.log(details[0])
     return (  
       <div>
-      <Link to = "/" >
       Back
-      </Link>
-
+      
       <h2> gr </h2> 
     </div>
     );

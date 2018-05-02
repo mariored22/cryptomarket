@@ -13,10 +13,8 @@ class Main extends Component{
     const llink = "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/";
     return(
       <div key ={val.name} >
-      <Link to = {`/details/${val.id}`} >
           <img height="32" width="32" src={llink + icons + ".png"} />
           {val.price_usd}
-        </Link>
 
  </div>
     );
