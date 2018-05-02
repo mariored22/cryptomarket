@@ -8,6 +8,37 @@ class Main extends Component{
   componentWillMount(){
     this.props.userlist();
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.users !== nextProps.users) {
+
+      clearTimeout(this.timeout);
+
+      // Optionally do something with data
+
+      if (!nextProps.isFetching) {
+        this.startPoll();
+      }
+    }
+
+
+  }
+
+  componentWillMount() {
+    this.props.userlist();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  }
+
+  startPoll() {
+    this.timeout = setTimeout(() => this.props.userlist(), 15000);
+  }
+
+
+
+
   list(val){
     const icons = val.symbol.toLowerCase();
     const llink = "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/32/icon/";
