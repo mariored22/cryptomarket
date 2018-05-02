@@ -14,8 +14,8 @@ class Main extends Component{
     return(
       <div key ={val.name} >
       <Link to = {`/details/${val.id}`} >
-          {val.symbol}
-        <img height="32" width="32" src={llink + icons + ".png"} />
+          <img height="32" width="32" src={llink + icons + ".png"} />
+          {val.price_usd}
         </Link>
 
  </div>
